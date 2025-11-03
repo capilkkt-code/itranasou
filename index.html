@@ -380,7 +380,7 @@
       whatsapp_number: "6282239520402",
       facebook_url: "https://www.facebook.com/share/1JWaef54dt/",
       instagram_url: "https://www.instagram.com/falaksoruditilebit?igsh=MTNrbzhqNWE5eWE0cA==",
-      linkedin_url: "www.linkedin.com/in/itranasou",
+      linkedin_url: "https://www.linkedin.com/in/itranasou",
       email_address: "ditilebit33@gmail.com",
       twitter_url: "",
       youtube_url: "https://www.youtube.com/@airaDiti",
@@ -441,32 +441,29 @@
 
       const facebookUrl = config.facebook_url || defaultConfig.facebook_url;
       const facebookBtn = document.getElementById('facebookBtn');
-      if (facebookUrl && facebookUrl.trim() !== '') {
+      if (facebookUrl && facebookUrl.trim() !== '' && facebookUrl !== 'https://facebook.com/') {
         facebookBtn.href = facebookUrl.startsWith('http') ? facebookUrl : `https://${facebookUrl}`;
         facebookBtn.style.display = 'flex';
       } else {
-        facebookBtn.href = 'https://facebook.com/';
-        facebookBtn.style.display = 'flex';
+        facebookBtn.style.display = 'none';
       }
 
       const instagramUrl = config.instagram_url || defaultConfig.instagram_url;
       const instagramBtn = document.getElementById('instagramBtn');
-      if (instagramUrl && instagramUrl.trim() !== '') {
+      if (instagramUrl && instagramUrl.trim() !== '' && instagramUrl !== 'https://instagram.com/') {
         instagramBtn.href = instagramUrl.startsWith('http') ? instagramUrl : `https://${instagramUrl}`;
         instagramBtn.style.display = 'flex';
       } else {
-        instagramBtn.href = 'https://instagram.com/';
-        instagramBtn.style.display = 'flex';
+        instagramBtn.style.display = 'none';
       }
 
       const linkedinUrl = config.linkedin_url || defaultConfig.linkedin_url;
       const linkedinBtn = document.getElementById('linkedinBtn');
-      if (linkedinUrl && linkedinUrl.trim() !== '') {
+      if (linkedinUrl && linkedinUrl.trim() !== '' && linkedinUrl !== 'https://linkedin.com/') {
         linkedinBtn.href = linkedinUrl.startsWith('http') ? linkedinUrl : `https://${linkedinUrl}`;
         linkedinBtn.style.display = 'flex';
       } else {
-        linkedinBtn.href = 'https://linkedin.com/';
-        linkedinBtn.style.display = 'flex';
+        linkedinBtn.style.display = 'none';
       }
 
       const emailAddress = config.email_address || defaultConfig.email_address;
@@ -475,38 +472,34 @@
         emailBtn.href = `mailto:${emailAddress}`;
         emailBtn.style.display = 'flex';
       } else {
-        emailBtn.href = 'mailto:';
-        emailBtn.style.display = 'flex';
+        emailBtn.style.display = 'none';
       }
 
       const twitterUrl = config.twitter_url || defaultConfig.twitter_url;
       const twitterBtn = document.getElementById('twitterBtn');
-      if (twitterUrl && twitterUrl.trim() !== '') {
+      if (twitterUrl && twitterUrl.trim() !== '' && twitterUrl !== 'https://twitter.com/') {
         twitterBtn.href = twitterUrl.startsWith('http') ? twitterUrl : `https://${twitterUrl}`;
         twitterBtn.style.display = 'flex';
       } else {
-        twitterBtn.href = 'https://twitter.com/';
-        twitterBtn.style.display = 'flex';
+        twitterBtn.style.display = 'none';
       }
 
       const youtubeUrl = config.youtube_url || defaultConfig.youtube_url;
       const youtubeBtn = document.getElementById('youtubeBtn');
-      if (youtubeUrl && youtubeUrl.trim() !== '') {
+      if (youtubeUrl && youtubeUrl.trim() !== '' && youtubeUrl !== 'https://youtube.com/') {
         youtubeBtn.href = youtubeUrl.startsWith('http') ? youtubeUrl : `https://${youtubeUrl}`;
         youtubeBtn.style.display = 'flex';
       } else {
-        youtubeBtn.href = 'https://youtube.com/';
-        youtubeBtn.style.display = 'flex';
+        youtubeBtn.style.display = 'none';
       }
 
       const tiktokUrl = config.tiktok_url || defaultConfig.tiktok_url;
       const tiktokBtn = document.getElementById('tiktokBtn');
-      if (tiktokUrl && tiktokUrl.trim() !== '') {
+      if (tiktokUrl && tiktokUrl.trim() !== '' && tiktokUrl !== 'https://tiktok.com/') {
         tiktokBtn.href = tiktokUrl.startsWith('http') ? tiktokUrl : `https://${tiktokUrl}`;
         tiktokBtn.style.display = 'flex';
       } else {
-        tiktokBtn.href = 'https://tiktok.com/';
-        tiktokBtn.style.display = 'flex';
+        tiktokBtn.style.display = 'none';
       }
     }
 
@@ -734,5 +727,5 @@ ${message}`;
 
     initializeSDKs();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9987e2e8e4aad8ca',t:'MTc2MjEzMTExOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998802c7e0cfb882',t:'MTc2MjEzMjQyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
