@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Itranasou</title>
+  <title>Portfolio Microsite</title>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="/_sdk/data_sdk.js"></script>
   <style>
@@ -439,33 +439,49 @@
       whatsappBtn.href = '#';
       whatsappBtn.style.display = 'flex';
 
+      // Update Facebook link
       const facebookUrl = config.facebook_url || defaultConfig.facebook_url;
       const facebookBtn = document.getElementById('facebookBtn');
-      if (facebookUrl && facebookUrl.trim() !== '' && facebookUrl !== 'https://facebook.com/') {
-        facebookBtn.href = facebookUrl.startsWith('http') ? facebookUrl : `https://${facebookUrl}`;
+      if (facebookUrl && facebookUrl.trim() !== '') {
+        let finalFacebookUrl = facebookUrl;
+        if (!finalFacebookUrl.startsWith('http')) {
+          finalFacebookUrl = `https://${finalFacebookUrl}`;
+        }
+        facebookBtn.href = finalFacebookUrl;
         facebookBtn.style.display = 'flex';
       } else {
         facebookBtn.style.display = 'none';
       }
 
+      // Update Instagram link
       const instagramUrl = config.instagram_url || defaultConfig.instagram_url;
       const instagramBtn = document.getElementById('instagramBtn');
-      if (instagramUrl && instagramUrl.trim() !== '' && instagramUrl !== 'https://instagram.com/') {
-        instagramBtn.href = instagramUrl.startsWith('http') ? instagramUrl : `https://${instagramUrl}`;
+      if (instagramUrl && instagramUrl.trim() !== '') {
+        let finalInstagramUrl = instagramUrl;
+        if (!finalInstagramUrl.startsWith('http')) {
+          finalInstagramUrl = `https://${finalInstagramUrl}`;
+        }
+        instagramBtn.href = finalInstagramUrl;
         instagramBtn.style.display = 'flex';
       } else {
         instagramBtn.style.display = 'none';
       }
 
+      // Update LinkedIn link
       const linkedinUrl = config.linkedin_url || defaultConfig.linkedin_url;
       const linkedinBtn = document.getElementById('linkedinBtn');
-      if (linkedinUrl && linkedinUrl.trim() !== '' && linkedinUrl !== 'https://linkedin.com/') {
-        linkedinBtn.href = linkedinUrl.startsWith('http') ? linkedinUrl : `https://${linkedinUrl}`;
+      if (linkedinUrl && linkedinUrl.trim() !== '') {
+        let finalLinkedinUrl = linkedinUrl;
+        if (!finalLinkedinUrl.startsWith('http')) {
+          finalLinkedinUrl = `https://${finalLinkedinUrl}`;
+        }
+        linkedinBtn.href = finalLinkedinUrl;
         linkedinBtn.style.display = 'flex';
       } else {
         linkedinBtn.style.display = 'none';
       }
 
+      // Update Email link
       const emailAddress = config.email_address || defaultConfig.email_address;
       const emailBtn = document.getElementById('emailBtn');
       if (emailAddress && emailAddress.trim() !== '') {
@@ -475,28 +491,43 @@
         emailBtn.style.display = 'none';
       }
 
+      // Update Twitter link
       const twitterUrl = config.twitter_url || defaultConfig.twitter_url;
       const twitterBtn = document.getElementById('twitterBtn');
-      if (twitterUrl && twitterUrl.trim() !== '' && twitterUrl !== 'https://twitter.com/') {
-        twitterBtn.href = twitterUrl.startsWith('http') ? twitterUrl : `https://${twitterUrl}`;
+      if (twitterUrl && twitterUrl.trim() !== '') {
+        let finalTwitterUrl = twitterUrl;
+        if (!finalTwitterUrl.startsWith('http')) {
+          finalTwitterUrl = `https://${finalTwitterUrl}`;
+        }
+        twitterBtn.href = finalTwitterUrl;
         twitterBtn.style.display = 'flex';
       } else {
         twitterBtn.style.display = 'none';
       }
 
+      // Update YouTube link
       const youtubeUrl = config.youtube_url || defaultConfig.youtube_url;
       const youtubeBtn = document.getElementById('youtubeBtn');
-      if (youtubeUrl && youtubeUrl.trim() !== '' && youtubeUrl !== 'https://youtube.com/') {
-        youtubeBtn.href = youtubeUrl.startsWith('http') ? youtubeUrl : `https://${youtubeUrl}`;
+      if (youtubeUrl && youtubeUrl.trim() !== '') {
+        let finalYoutubeUrl = youtubeUrl;
+        if (!finalYoutubeUrl.startsWith('http')) {
+          finalYoutubeUrl = `https://${finalYoutubeUrl}`;
+        }
+        youtubeBtn.href = finalYoutubeUrl;
         youtubeBtn.style.display = 'flex';
       } else {
         youtubeBtn.style.display = 'none';
       }
 
+      // Update TikTok link
       const tiktokUrl = config.tiktok_url || defaultConfig.tiktok_url;
       const tiktokBtn = document.getElementById('tiktokBtn');
-      if (tiktokUrl && tiktokUrl.trim() !== '' && tiktokUrl !== 'https://tiktok.com/') {
-        tiktokBtn.href = tiktokUrl.startsWith('http') ? tiktokUrl : `https://${tiktokUrl}`;
+      if (tiktokUrl && tiktokUrl.trim() !== '') {
+        let finalTiktokUrl = tiktokUrl;
+        if (!finalTiktokUrl.startsWith('http')) {
+          finalTiktokUrl = `https://${finalTiktokUrl}`;
+        }
+        tiktokBtn.href = finalTiktokUrl;
         tiktokBtn.style.display = 'flex';
       } else {
         tiktokBtn.style.display = 'none';
@@ -727,5 +758,5 @@ ${message}`;
 
     initializeSDKs();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998802c7e0cfb882',t:'MTc2MjEzMjQyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99881b84731ea2a7',t:'MTc2MjEzMzQzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
