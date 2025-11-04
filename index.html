@@ -377,7 +377,7 @@
       profile_name: "Petrus P. Ditilebit",
       profile_title: "Web Developer & Digital Creator",
       profile_bio: "Seorang web developer berpengalaman dengan passion dalam menciptakan solusi digital inovatif. Spesialisasi dalam pengembangan website modern, aplikasi web responsif, dan strategi digital marketing. Selalu siap membantu mewujudkan visi digital Anda menjadi kenyataan.",
-      whatsapp_number: "6282239520402",
+      whatsapp_number: "6281234567890",
       facebook_url: "https://www.facebook.com/share/1JWaef54dt/",
       instagram_url: "https://www.instagram.com/falaksoruditilebit?igsh=MTNrbzhqNWE5eWE0cA==",
       linkedin_url: "https://www.linkedin.com/in/itranasou",
@@ -439,14 +439,67 @@
       whatsappBtn.href = '#';
       whatsappBtn.style.display = 'flex';
 
+      // Helper function to validate and format URLs
+      function formatSocialUrl(url, platform) {
+        if (!url || url.trim() === '') return null;
+        
+        let cleanUrl = url.trim();
+        
+        // For Facebook, use the exact URL provided without modification
+        if (platform === 'facebook') {
+          // If it's already a complete URL, use it as-is
+          if (cleanUrl.startsWith('http')) {
+            return cleanUrl;
+          }
+          // If it starts with www.facebook.com, add https
+          if (cleanUrl.startsWith('www.facebook.com') || cleanUrl.startsWith('facebook.com')) {
+            return `https://${cleanUrl}`;
+          }
+          // If it's just a username, create Facebook URL
+          return `https://www.facebook.com/${cleanUrl}`;
+        }
+        
+        // Remove any existing protocol for other platforms
+        cleanUrl = cleanUrl.replace(/^https?:\/\//, '');
+        cleanUrl = cleanUrl.replace(/^www\./, '');
+        
+        // Platform-specific URL formatting
+        switch(platform) {
+          case 'instagram':
+            if (!cleanUrl.includes('instagram.com')) {
+              cleanUrl = `instagram.com/${cleanUrl}`;
+            }
+            break;
+          case 'linkedin':
+            if (!cleanUrl.includes('linkedin.com')) {
+              cleanUrl = `linkedin.com/in/${cleanUrl}`;
+            }
+            break;
+          case 'twitter':
+            if (!cleanUrl.includes('twitter.com') && !cleanUrl.includes('x.com')) {
+              cleanUrl = `twitter.com/${cleanUrl}`;
+            }
+            break;
+          case 'youtube':
+            if (!cleanUrl.includes('youtube.com')) {
+              cleanUrl = `youtube.com/@${cleanUrl}`;
+            }
+            break;
+          case 'tiktok':
+            if (!cleanUrl.includes('tiktok.com')) {
+              cleanUrl = `tiktok.com/@${cleanUrl}`;
+            }
+            break;
+        }
+        
+        return `https://${cleanUrl}`;
+      }
+
       // Update Facebook link
       const facebookUrl = config.facebook_url || defaultConfig.facebook_url;
       const facebookBtn = document.getElementById('facebookBtn');
-      if (facebookUrl && facebookUrl.trim() !== '') {
-        let finalFacebookUrl = facebookUrl;
-        if (!finalFacebookUrl.startsWith('http')) {
-          finalFacebookUrl = `https://${finalFacebookUrl}`;
-        }
+      const finalFacebookUrl = formatSocialUrl(facebookUrl, 'facebook');
+      if (finalFacebookUrl) {
         facebookBtn.href = finalFacebookUrl;
         facebookBtn.style.display = 'flex';
       } else {
@@ -456,11 +509,8 @@
       // Update Instagram link
       const instagramUrl = config.instagram_url || defaultConfig.instagram_url;
       const instagramBtn = document.getElementById('instagramBtn');
-      if (instagramUrl && instagramUrl.trim() !== '') {
-        let finalInstagramUrl = instagramUrl;
-        if (!finalInstagramUrl.startsWith('http')) {
-          finalInstagramUrl = `https://${finalInstagramUrl}`;
-        }
+      const finalInstagramUrl = formatSocialUrl(instagramUrl, 'instagram');
+      if (finalInstagramUrl) {
         instagramBtn.href = finalInstagramUrl;
         instagramBtn.style.display = 'flex';
       } else {
@@ -470,11 +520,8 @@
       // Update LinkedIn link
       const linkedinUrl = config.linkedin_url || defaultConfig.linkedin_url;
       const linkedinBtn = document.getElementById('linkedinBtn');
-      if (linkedinUrl && linkedinUrl.trim() !== '') {
-        let finalLinkedinUrl = linkedinUrl;
-        if (!finalLinkedinUrl.startsWith('http')) {
-          finalLinkedinUrl = `https://${finalLinkedinUrl}`;
-        }
+      const finalLinkedinUrl = formatSocialUrl(linkedinUrl, 'linkedin');
+      if (finalLinkedinUrl) {
         linkedinBtn.href = finalLinkedinUrl;
         linkedinBtn.style.display = 'flex';
       } else {
@@ -494,11 +541,8 @@
       // Update Twitter link
       const twitterUrl = config.twitter_url || defaultConfig.twitter_url;
       const twitterBtn = document.getElementById('twitterBtn');
-      if (twitterUrl && twitterUrl.trim() !== '') {
-        let finalTwitterUrl = twitterUrl;
-        if (!finalTwitterUrl.startsWith('http')) {
-          finalTwitterUrl = `https://${finalTwitterUrl}`;
-        }
+      const finalTwitterUrl = formatSocialUrl(twitterUrl, 'twitter');
+      if (finalTwitterUrl) {
         twitterBtn.href = finalTwitterUrl;
         twitterBtn.style.display = 'flex';
       } else {
@@ -508,11 +552,8 @@
       // Update YouTube link
       const youtubeUrl = config.youtube_url || defaultConfig.youtube_url;
       const youtubeBtn = document.getElementById('youtubeBtn');
-      if (youtubeUrl && youtubeUrl.trim() !== '') {
-        let finalYoutubeUrl = youtubeUrl;
-        if (!finalYoutubeUrl.startsWith('http')) {
-          finalYoutubeUrl = `https://${finalYoutubeUrl}`;
-        }
+      const finalYoutubeUrl = formatSocialUrl(youtubeUrl, 'youtube');
+      if (finalYoutubeUrl) {
         youtubeBtn.href = finalYoutubeUrl;
         youtubeBtn.style.display = 'flex';
       } else {
@@ -522,11 +563,8 @@
       // Update TikTok link
       const tiktokUrl = config.tiktok_url || defaultConfig.tiktok_url;
       const tiktokBtn = document.getElementById('tiktokBtn');
-      if (tiktokUrl && tiktokUrl.trim() !== '') {
-        let finalTiktokUrl = tiktokUrl;
-        if (!finalTiktokUrl.startsWith('http')) {
-          finalTiktokUrl = `https://${finalTiktokUrl}`;
-        }
+      const finalTiktokUrl = formatSocialUrl(tiktokUrl, 'tiktok');
+      if (finalTiktokUrl) {
         tiktokBtn.href = finalTiktokUrl;
         tiktokBtn.style.display = 'flex';
       } else {
@@ -758,5 +796,5 @@ ${message}`;
 
     initializeSDKs();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99881b84731ea2a7',t:'MTc2MjEzMzQzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998ff12786eb9b9c',t:'MTc2MjIxNTU4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
