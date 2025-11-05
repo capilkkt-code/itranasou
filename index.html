@@ -445,18 +445,14 @@
         
         let cleanUrl = url.trim();
         
-        // For Facebook, use the exact URL provided without modification
+        // For Facebook, preserve the exact URL format to avoid blocking issues
         if (platform === 'facebook') {
-          // If it's already a complete URL, use it as-is
+          // If it's already a complete URL, use it exactly as provided
           if (cleanUrl.startsWith('http')) {
             return cleanUrl;
           }
-          // If it starts with www.facebook.com, add https
-          if (cleanUrl.startsWith('www.facebook.com') || cleanUrl.startsWith('facebook.com')) {
-            return `https://${cleanUrl}`;
-          }
-          // If it's just a username, create Facebook URL
-          return `https://www.facebook.com/${cleanUrl}`;
+          // If it doesn't start with http, add https but preserve the rest
+          return `https://${cleanUrl}`;
         }
         
         // Remove any existing protocol for other platforms
@@ -796,5 +792,5 @@ ${message}`;
 
     initializeSDKs();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998ff12786eb9b9c',t:'MTc2MjIxNTU4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9999bd1154fc1333',t:'MTc2MjMxODMxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
